@@ -1,59 +1,138 @@
-# TaskFlow — Full Stack SaaS Task Management System
+# 🚀 TaskFlow — Full-Stack Task Management System
 
-TaskFlow is a production-quality, modern, responsive **Task Management System** built as a full-stack SaaS workspace.
+<p align="center">
+  <strong>A modern, responsive and animated task management platform built for productivity.</strong>
+</p>
 
----
-
-## 🌟 Key Features
-
-- **Guest Authentication**: One-click guest access issuing secure signed JWT tokens.
-- **REST API Architecture**: Full CRUD endpoints (`GET`, `POST`, `PATCH`, `DELETE`) with request validation and error handling.
-- **Persistent Database Engine**: Automatic dataset storage and user isolation.
-- **Interactive Dashboard & Statistics**: Real-time stats cards for Total Tasks, To Do, In Progress, and Completed tasks.
-- **Smart Search & Filtering**: Real-time title/description debounced search, priority filter, status tabs, and multi-field sorting.
-- **Interactive Task Workflow**: Animated completion checkboxes, confetti micro-interactions, context menus, and delete confirmation dialogs.
-- **Dark & Light Mode**: Seamless dark/light/system theme toggling with zero flash and persistence.
-- **Responsive Layout**: Desktop sidebar navigation, tablet compact view, and mobile bottom bar navigation.
+<p align="center">
+  Manage tasks • Track progress • Set deadlines • Receive email reminders
+</p>
 
 ---
 
-## 🛠️ Technology Stack
 
-- **Frontend**: React 19, TypeScript, Tailwind CSS, Motion (Framer Motion), Lucide Icons, Canvas Confetti.
-- **Backend**: Express REST API, Node.js, TypeScript (`tsx`).
-- **Authentication**: JSON Web Tokens (JWT) with Bearer header verification.
-- **Persistence**: File-backed database engine with local fallback and seed dataset.
+
+## 📌 About The Project
+
+**TaskFlow** is a full-stack task management application designed to help users create, organize, track and complete tasks efficiently.
+
+The application provides a clean and responsive interface with authentication, task management, filtering, searching, statistics, themes, notifications and automated deadline reminders.
+
+This project was developed as part of a **Full Stack Developer Technical Assessment**.
+
+The application focuses on:
+
+- Clean and reusable components
+- Responsive UI
+- Smooth animations
+- REST API architecture
+- Authentication and authorization
+- Task CRUD operations
+- Deadline management
+- Automated email notifications
+- User notification preferences
+- Production deployment
 
 ---
 
-## 🚀 API Documentation
+# ✨ Features
 
-### Auth Endpoints
-- `POST /api/auth/guest` — Creates/retrieves guest session and returns JWT token.
-- `GET /api/auth/me` — Fetches profile for current authenticated user token.
+## 🔐 Authentication
 
-### Task Endpoints
-- `GET /api/tasks` — Lists user's tasks with query filters (`status`, `priority`, `search`, `sort`).
-- `GET /api/tasks/stats` — Computes dynamic workspace statistics.
-- `POST /api/tasks` — Creates new task (validated title, priority, status, optional due date).
-- `PATCH /api/tasks/:id` — Updates task properties or toggles completion status.
-- `DELETE /api/tasks/:id` — Removes task permanently.
-- `POST /api/tasks/seed` — Reseeds default sample dataset.
+- User registration
+- User login
+- Guest login
+- JWT-based authentication
+- Protected API routes
+- Persistent authentication session
+- User-specific task data
 
 ---
 
-## 💻 Local Development & Build
+## 📋 Task Management
 
-```bash
-# Install dependencies
-npm install
+Users can:
 
-# Run dev server (Express + Vite on http://0.0.0.0:3000)
-npm run dev
+- Create tasks
+- Edit tasks
+- Delete tasks
+- Mark tasks as completed
+- Change task status
+- Set task priority
+- Add descriptions
+- Set due dates
+- Enable/disable reminders
 
-# Build for production
-npm run build
+### Task Status
 
-# Start production server
-npm run start
-```
+- 📝 To Do
+- 🔄 In Progress
+- ✅ Completed
+
+### Priority Levels
+
+- 🟢 Low
+- 🟡 Medium
+- 🔴 High
+
+---
+
+## 🔎 Search & Filtering
+
+TaskFlow provides:
+
+- Real-time task search
+- Debounced search
+- Status filtering
+- Priority filtering
+- Sorting
+- Combined filters
+- Responsive filtering controls
+
+---
+
+## 📊 Dashboard
+
+The dashboard provides an overview of the user's workspace.
+
+Statistics include:
+
+- Total Tasks
+- To Do
+- In Progress
+- Completed
+- Upcoming Tasks
+- Task progress
+
+---
+
+## ⏰ Smart Deadline Reminders
+
+TaskFlow includes an automated background reminder system.
+
+The backend periodically checks upcoming tasks and sends notifications based on the task deadline.
+
+### Reminder Types
+
+| Reminder | Description |
+|---|---|
+| 🔔 One Day Before | Notifies the user before the deadline |
+| 📅 Due Today | Notifies the user when the task is due |
+| ⚠️ Overdue | Notifies the user after the deadline |
+
+The reminder scheduler runs every **10 minutes**.
+
+```text
+Task Created
+     ↓
+Due Date Stored
+     ↓
+Background Scheduler
+     ↓
+Every 10 Minutes
+     ↓
+Check Upcoming Tasks
+     ↓
+Reminder Condition Matched
+     ↓
+Email Notification
