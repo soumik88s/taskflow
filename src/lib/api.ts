@@ -1,6 +1,7 @@
 import { FilterOptions, Task, TaskStats, User, UserNotificationPreferences } from '../types';
 
 const TOKEN_KEY = 'taskflow_token';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 function getToken(): string | null {
   return localStorage.getItem(TOKEN_KEY);
@@ -25,7 +26,7 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const response = await fetch(endpoint, {
+  const response = await fetch(`${API_URL}${endpoint}`, {
     ...options,
     headers,
   });
