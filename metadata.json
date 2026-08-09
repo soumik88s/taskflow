@@ -1,0 +1,6 @@
+{
+  "name": "TaskFlow",
+  "description": "Full-stack SaaS Task Management System with guest authentication, REST API, statistics, interactive task workflows, and responsive theme support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
